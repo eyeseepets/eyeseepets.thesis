@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.HomeFragment"
+    android:animateLayoutChanges="true">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="@dimen/_5sdp"
+            android:padding="@dimen/_10sdp">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/clProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_75sdp"
+                    android:src="@drawable/wallpaper_buildings"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintDimensionRatio=""
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/civOwner"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:src="@drawable/logo_person"
+                    app:civ_border_color="#73CE8C"
+                    app:civ_border_width="1dp"
+                    app:civ_shadow_radius="10"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvFullName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Justin Carretas"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/civOwner"
+                    app:layout_constraintStart_toStartOf="@+id/civOwner"
+                    app:layout_constraintTop_toBottomOf="@+id/civOwner" />
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:textSize="@dimen/_11sdp"
+                    android:text="jusrcarretas"
+                    app:layout_constraintEnd_toEndOf="@+id/tvFullName"
+                    app:layout_constraintStart_toStartOf="@+id/tvFullName"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFullName"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@id/cvProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/wallpaper_map"
+                android:scaleType="centerCrop" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/clReplaceable"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@drawable/border_rectangle_red"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Loading your pet's status"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </android.support.constraint.ConstraintLayout>
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/clUnsafe"
+                    android:layout_width="@dimen/_270sdp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@drawable/border_rectangle_unsafe"
+                    android:padding="@dimen/_7sdp"
+                    android:visibility="gone">
+                    <ImageView
+                        android:id="@+id/ivLogo"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:src="@drawable/application_logo_cropped"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvUnsafe"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:gravity="center_horizontal"
+                        android:text="Your pet has reached its geofence limit"
+                        android:textSize="@dimen/_15sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivLogo"
+                        app:layout_constraintTop_toTopOf="@+id/ivLogo"
+                        app:layout_constraintBottom_toTopOf="@+id/llButtonsUnsafe"/>
+
+                    <LinearLayout
+                        android:id="@+id/llButtonsUnsafe"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/tvUnsafe"
+                        app:layout_constraintStart_toStartOf="@+id/tvUnsafe"
+                        android:weightSum="2">
+                        <com.ndroid.CoolButton
+                            android:text="Cancel"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:minHeight="0dp"
+                            android:background="@color/colorLightGrey"
+                            custom:border_radius="30"
+                            android:layout_marginRight="@dimen/_4sdp"/>
+                        <com.ndroid.CoolButton
+                            android:text="Report"
+                            android:textColor="@color/colorWhite"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:minHeight="0dp"
+                            android:background="@color/colorAccent"
+                            custom:border_radius="30"/>
+                    </LinearLayout>
+                </android.support.constraint.ConstraintLayout>
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/clSafe"
+                    android:layout_width="@dimen/_270sdp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@drawable/border_rectangle_safe"
+                    android:padding="@dimen/_7sdp"
+                    android:visibility="visible">
+                    <ImageView
+                        android:id="@+id/ivLogoSafe"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:src="@drawable/application_logo_cropped"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/llSafe"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivLogoSafe"
+                        app:layout_constraintTop_toTopOf="@+id/ivLogoSafe"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tvWelcome"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="Welcome back!"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:id="@+id/tvSafe"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="You can check your pet's status by navigating to the right."
+                            android:textSize="@dimen/_11sdp"/>
+                    </LinearLayout>
+                </android.support.constraint.ConstraintLayout>
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>

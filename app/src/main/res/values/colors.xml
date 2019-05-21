@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#26a4b7</color>
+    <color name="colorPrimaryDark">#1D8EA2</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorLogin">#25c1d6</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorDarkBlue">#FFFFFF</color>
+    <color name="colorSeaGreen">#80d38e</color>
+    <color name="colorLightGrey">#eeeeee</color>
+    <color name="colorMustard">#ffc700</color>
+    <color name="colorTabButtons">#FFFFFF</color>
+    <color name="colorSelectedTab">#7E7777</color>
+    <color name="colorDivider">#C7C7C7</color>
+    <color name="blue_500">#424EC5</color>
+    <color name="colorCircleStroke">#1F30CF</color>
+    <color name="colorCircleFill">#744F5ED1</color>
+    <color name="colorFab">#B2FFFFFF</color>
+    <color name="colorTransparent">#00FFFFFF</color>
+</resources>

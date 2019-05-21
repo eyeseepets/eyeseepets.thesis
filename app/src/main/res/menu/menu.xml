@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/miNewPet"
+        app:showAsAction="always"
+        android:title="NEW PET"
+        android:icon="@drawable/ic_add_white_24dp"
+        android:orderInCategory="2"/>
+
+    <item android:id="@+id/miNewGeoPoint"
+        app:showAsAction="always"
+        android:title="NEW GEO POINT"
+        android:icon="@drawable/ic_add_location_white_24dp"
+        android:orderInCategory="1"/>
+    <item android:id="@+id/miUpdateUser"
+        app:showAsAction="never"
+        android:title="Update User"
+        android:orderInCategory="1"
+        android:visible="false"/>
+    <item android:id="@+id/miUpdatePet"
+        app:showAsAction="never"
+        android:title="Update Pet"
+        android:orderInCategory="1"
+        android:visible="false"/>
+    <item android:id="@+id/miUpdateGeoPoint"
+        app:showAsAction="never"
+        android:title="Update Geo Point"
+        android:orderInCategory="1"
+        android:visible="false"/>
+    <item android:id="@+id/miSendReport"
+        app:showAsAction="never"
+        android:title="Send Report"
+        android:orderInCategory="3"/>
+    <item android:id="@+id/miLogout"
+        app:showAsAction="never"
+        android:title="Logout"
+        android:orderInCategory="4"/>
+</menu>

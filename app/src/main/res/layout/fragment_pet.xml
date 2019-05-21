@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    class="com.google.android.gms.maps.SupportMapFragment"
+    tools:context=".Fragments.HomeFragment"
+    android:animateLayoutChanges="true">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="@dimen/_5sdp"
+            android:padding="@dimen/_10sdp"
+            android:visibility="gone">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/clProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_75sdp"
+                    android:src="@drawable/wallpaper_paw"
+                    android:scaleType="matrix"
+                    app:layout_constraintDimensionRatio=""
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/civPet"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:src="@drawable/logo_pet"
+                    app:civ_border_color="#73CE8C"
+                    app:civ_border_width="1dp"
+                    app:civ_shadow_radius="10"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Mempy"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/civPet"
+                    app:layout_constraintStart_toStartOf="@+id/civPet"
+                    app:layout_constraintTop_toBottomOf="@+id/civPet" />
+                <TextView
+                    android:id="@+id/tvGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:textSize="@dimen/_11sdp"
+                    android:text="Female"
+                    app:layout_constraintEnd_toEndOf="@+id/tvName"
+                    app:layout_constraintStart_toStartOf="@+id/tvName"
+                    app:layout_constraintTop_toBottomOf="@+id/tvName"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@id/cvProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mvMap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"/>
+            <TextView
+                android:text="PET NAME HERE"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:id="@+id/tvPetName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:background="@drawable/shape_text_background"
+                android:padding="@dimen/_10sdp"/>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:padding="@dimen/_15sdp">
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fabTrackPet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_location_searching_24dp"
+                    app:backgroundTint="@color/white"/>
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fabSwitchPet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_swap_gray_24dp"
+                    app:backgroundTint="@color/white"
+                    android:layout_below="@+id/fabTrackPet"
+                    android:layout_marginTop="@dimen/_10sdp"/>
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fabToggleMapStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_layers_lgray_24dp"
+                    app:backgroundTint="@color/white"
+                    android:layout_below="@+id/fabSwitchPet"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"/>
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>

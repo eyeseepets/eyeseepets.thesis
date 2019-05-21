@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/_10sdp"
+    android:background="@drawable/border_rectangle_unsafe">
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:src="@drawable/application_logo_cropped"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="Your pet has reached its geofence limit"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivLogo"
+        app:layout_constraintTop_toTopOf="@+id/ivLogo" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        android:weightSum="2">
+        <com.ndroid.CoolButton
+            android:text="Cancel"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:padding="@dimen/_4sdp"
+            android:layout_margin="@dimen/_4sdp"
+            android:background="@color/colorLightGrey"
+            custom:border_radius="50"/>
+        <com.ndroid.CoolButton
+            android:text="Report"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:padding="@dimen/_4sdp"
+            android:layout_margin="@dimen/_4sdp"
+            android:background="@color/colorAccent"
+            custom:border_radius="50"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context=".Activities.SignUpActivity"
+    >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tbSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:contentInsetRight="0dp"
+        android:contentInsetEnd="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp" >
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/rlSignUp"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:fitsSystemWindows="true"
+            android:isScrollContainer="false"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp">
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:text="@string/sign_up"
+                android:textSize="@dimen/_17sdp"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/btnBack"
+                android:background="@drawable/ic_arrow_back_white_24dp"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"/>
+
+            <Button
+                android:id="@+id/btnConfirm"
+                android:background="@drawable/ic_check_white_24dp"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+    <ScrollView
+        android:id="@+id/clDataContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        custom:layout_constraintTop_toBottomOf="@+id/tbSignUp"
+        custom:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/civOwner"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:src="@drawable/logo_person"
+                    app:civ_border_color="#F77171"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_color="#C7C7C7"
+                    app:civ_shadow_radius="10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnAdd"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/ic_add_button_green"
+                    app:layout_constraintBottom_toBottomOf="@+id/civOwner"
+                    app:layout_constraintEnd_toEndOf="@+id/civOwner" />
+            </android.support.constraint.ConstraintLayout>
+            <com.ndroid.CoolEditText
+                android:id="@+id/etEmail"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="@string/email"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="@dimen/_12sdp"
+                custom:border_color="#262626"
+                custom:border_radius="40"
+                custom:border_stroke="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                custom:layout_constraintTop_toTopOf="parent"/>
+
+            <com.ndroid.CoolEditText
+                android:id="@+id/etFirstName"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textSize="@dimen/_12sdp"
+                custom:border_color="#262626"
+                custom:border_radius="40"
+                custom:border_stroke="2"
+                android:inputType="text"
+                android:maxLines="1"
+                android:gravity="center_horizontal"
+                android:hint="@string/first_name"
+                app:layout_constraintEnd_toEndOf="@+id/etEmail"
+                app:layout_constraintStart_toStartOf="@+id/etEmail"
+                app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+            <com.ndroid.CoolEditText
+                android:id="@+id/etLastName"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textSize="@dimen/_12sdp"
+                custom:border_color="#262626"
+                custom:border_radius="40"
+                custom:border_stroke="2"
+                android:inputType="text"
+                android:maxLines="1"
+                android:gravity="center_horizontal"
+                android:hint="@string/last_name"
+                app:layout_constraintEnd_toEndOf="@+id/etFirstName"
+                app:layout_constraintStart_toStartOf="@+id/etFirstName"
+                app:layout_constraintTop_toBottomOf="@id/etFirstName" />
+
+            <com.ndroid.CoolEditText
+                android:id="@+id/etPassword"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textSize="@dimen/_12sdp"
+                custom:border_color="#262626"
+                custom:border_radius="40"
+                custom:border_stroke="2"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:gravity="center_horizontal"
+                android:hint="@string/password"
+                app:layout_constraintEnd_toEndOf="@+id/etLastName"
+                app:layout_constraintStart_toStartOf="@+id/etLastName"
+                app:layout_constraintTop_toBottomOf="@id/etLastName" />
+
+            <com.ndroid.CoolEditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textSize="@dimen/_12sdp"
+                custom:border_color="#262626"
+                custom:border_radius="40"
+                custom:border_stroke="2"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:gravity="center_horizontal"
+                android:hint="@string/confirm_password"
+                app:layout_constraintEnd_toEndOf="@+id/etPassword"
+                app:layout_constraintStart_toStartOf="@+id/etPassword"
+                app:layout_constraintTop_toBottomOf="@id/etPassword" />
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

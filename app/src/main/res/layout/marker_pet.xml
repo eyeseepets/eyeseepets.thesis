@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/custom_marker_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/ivPet"
+        android:src="@drawable/logo_person"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_marginBottom="@dimen/_minus2sdp"
+        app:civ_border="true"
+        app:civ_border_color="#FFC107"
+        android:scaleType="centerCrop"/>
+    <RelativeLayout
+        android:layout_width="200px"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <FrameLayout
+            android:background="@drawable/ic_arrow_down"
+            android:layout_width="50px"
+            android:layout_height="35px"/>
+    </RelativeLayout>
+</LinearLayout>

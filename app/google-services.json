@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "437294129954",
+    "firebase_url": "https://eyeseepets-590b0.firebaseio.com",
+    "project_id": "eyeseepets-590b0",
+    "storage_bucket": "eyeseepets-590b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437294129954:android:507be1bb3f817c71",
+        "android_client_info": {
+          "package_name": "com.thesis.eyeseepets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "437294129954-rs92kqo1646ak6pf6cj51s3msarlqi8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf-OCuWTtPHrmAdeB1pWmAK5hI43CInj0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
