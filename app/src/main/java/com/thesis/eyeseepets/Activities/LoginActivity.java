@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.gson.Gson;
 import com.ndroid.CoolEditText;
 import com.thesis.eyeseepets.Dialogs.CustomDialog;
 import com.thesis.eyeseepets.Interfaces.API;
@@ -25,6 +26,9 @@ import com.thesis.eyeseepets.Utilities.Globals;
 import com.thesis.eyeseepets.Utilities.RetrofitClient;
 
 import org.chat21.android.core.ChatManager;
+import org.chat21.android.core.authentication.ChatAuthentication;
+import org.chat21.android.core.contacts.listeners.OnContactCreatedCallback;
+import org.chat21.android.core.exception.ChatRuntimeException;
 import org.chat21.android.core.users.models.ChatUser;
 import org.chat21.android.core.users.models.IChatUser;
 
@@ -119,6 +123,7 @@ public class LoginActivity extends AppCompatActivity {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d(TAG, "signInWithEmail:success");
                         Globals.currentUser = FirebaseAuth.getInstance().getCurrentUser();
+                        authWithEmail(email, password);
                         getCurrentOwner();
                     } else {
                         // If sign in fails, display a message to the user.
@@ -202,5 +207,21 @@ public class LoginActivity extends AppCompatActivity {
             public void onFailure(Call<List<GeoPointModel>> call, Throwable t) {
             }
         });
+    }
+
+    private void authWithEmail(String email, String password) {
+        ChatManager.startWithEmailAndPassword(this, getString(R.string.chat_firebase_appId),
+                email, password, new ChatAuthentication.OnChatLoginCallback() {
+                    @Override
+                    public void onChatLoginSuccess(IChatUser currentUser) {
+                        Log.e("LOGIN_STATUS", "SUCCESS");
+                        Log.e("LOGIN_STATUS", new Gson().toJson(currentUser));
+                    }
+
+                    @Override
+                    public void onChatLoginError(Exception e) {
+                        Log.e("FIREBASE", "LOGIN ERROR");
+                    }
+                });
     }
 }
